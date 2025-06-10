@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP/IP Model - Complete Guide</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TCP/IP Model</h1>
+            <p>Complete Guide to Network Communication</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>🌐 What is TCP/IP?</h2>
+                <p><strong>TCP/IP</strong> stands for <strong>Transmission Control Protocol / Internet Protocol</strong>. It's a comprehensive set of communication protocols that enables computers and devices to communicate over networks, including the internet.</p>
+                
+                <div class="protocol-box">
+                    <h3>Key Components:</h3>
+                    <p><strong>TCP (Transmission Control Protocol):</strong> Ensures reliable, ordered delivery of data between applications</p>
+                    <p><strong>IP (Internet Protocol):</strong> Handles addressing and routing of data packets across networks</p>
+                </div>
+
+                <div class="highlight">
+                    <strong>Think of it like the postal system:</strong> IP is like the addressing system that gets your letter to the right city and building, while TCP is like the mail service that ensures your letter arrives safely and in the right order.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🏗️ The Four Layers of TCP/IP Model</h2>
+                <p>The TCP/IP model is organized into four distinct layers, each with specific responsibilities:</p>
+
+                <div class="layer-diagram">
+                    <div class="layer">
+                        <h4>4. Application Layer</h4>
+                        <p>User interfaces and network services (HTTP, FTP, SMTP, DNS)</p>
+                    </div>
+                    <div class="layer">
+                        <h4>3. Transport Layer</h4>
+                        <p>End-to-end communication and data integrity (TCP, UDP)</p>
+                    </div>
+                    <div class="layer">
+                        <h4>2. Internet Layer</h4>
+                        <p>Routing and addressing across networks (IP, ICMP, ARP)</p>
+                    </div>
+                    <div class="layer">
+                        <h4>1. Network Access Layer</h4>
+                        <p>Physical network interface and data transmission (Ethernet, Wi-Fi)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📱 Layer 4: Application Layer</h2>
+                <p>This is the topmost layer where users interact with network applications. It provides network services directly to end-users and applications.</p>
+
+                <h3>Key Functions:</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Defines how applications communicate over the network</li>
+                    <li>Handles user authentication and data encryption</li>
+                    <li>Manages application-specific protocols</li>
+                </ul>
+
+                <h3>Common Protocols:</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Purpose</th>
+                            <th>Port</th>
+                            <th>Example Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>HTTP/HTTPS</strong></td>
+                            <td>Web browsing</td>
+                            <td>80/443</td>
+                            <td>Loading websites</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SMTP</strong></td>
+                            <td>Sending emails</td>
+                            <td>25</td>
+                            <td>Email delivery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FTP</strong></td>
+                            <td>File transfer</td>
+                            <td>21</td>
+                            <td>Uploading/downloading files</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DNS</strong></td>
+                            <td>Domain name resolution</td>
+                            <td>53</td>
+                            <td>Converting URLs to IP addresses</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>Real-World Example:</h4>
+                    <p>When you type "www.google.com" in your browser, the Application Layer uses HTTP/HTTPS protocol to request the webpage from Google's servers, while DNS protocol translates the domain name to an IP address.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🚚 Layer 3: Transport Layer</h2>
+                <p>The Transport Layer ensures reliable data delivery between applications on different devices. It handles segmentation, flow control, and error recovery.</p>
+
+                <h3>Primary Functions:</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Segments large data into smaller, manageable pieces</li>
+                    <li>Ensures data arrives in the correct order</li>
+                    <li>Handles error detection and correction</li>
+                    <li>Manages flow control to prevent data overflow</li>
+                </ul>
+
+                <h3>TCP vs UDP Comparison:</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>TCP</th>
+                            <th>UDP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Reliability</strong></td>
+                            <td>✅ Guaranteed delivery</td>
+                            <td>❌ Best effort delivery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Speed</strong></td>
+                            <td>🐢 Slower due to overhead</td>
+                            <td>🚀 Faster, minimal overhead</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Connection</strong></td>
+                            <td>📞 Connection-oriented</td>
+                            <td>📻 Connectionless</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use Cases</strong></td>
+                            <td>Web browsing, email, file transfer</td>
+                            <td>Live streaming, gaming, DNS queries</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="protocol-box">
+                    <h4>TCP Three-Way Handshake:</h4>
+                    <p>1. <strong>SYN:</strong> Client requests connection</p>
+                    <p>2. <strong>SYN-ACK:</strong> Server acknowledges and requests connection</p>
+                    <p>3. <strong>ACK:</strong> Client acknowledges, connection established</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🗺️ Layer 2: Internet Layer</h2>
+                <p>The Internet Layer handles logical addressing and routing of data packets across multiple networks. It's responsible for finding the best path from source to destination.</p>
+
+                <h3>Core Responsibilities:</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Assigns unique IP addresses to devices</li>
+                    <li>Routes packets across different networks</li>
+                    <li>Handles packet fragmentation and reassembly</li>
+                    <li>Provides network-level error reporting</li>
+                </ul>
+
+                <div class="network-diagram">
+                    <div class="network-node">
+                        <h4>Source</h4>
+                        <p>192.168.1.10</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="network-node">
+                        <h4>Router 1</h4>
+                        <p>Gateway</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="network-node">
+                        <h4>Internet</h4>
+                        <p>Multiple Hops</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="network-node">
+                        <h4>Destination</h4>
+                        <p>8.8.8.8</p>
+                    </div>
+                </div>
+
+                <h3>Key Protocols:</h3>
+                <div class="protocol-box">
+                    <p><strong>IP (Internet Protocol):</strong> Handles addressing and basic packet delivery</p>
+                    <p><strong>ICMP:</strong> Error reporting and network diagnostics (ping, traceroute)</p>
+                    <p><strong>ARP:</strong> Maps IP addresses to physical MAC addresses</p>
+                </div>
+
+                <div class="highlight">
+                    <strong>IP Address Types:</strong><br>
+                    • <strong>IPv4:</strong> 32-bit addresses (e.g., 192.168.1.1)<br>
+                    • <strong>IPv6:</strong> 128-bit addresses (e.g., 2001:0db8:85a3::8a2e:0370:7334)
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔌 Layer 1: Network Access Layer</h2>
+                <p>The Network Access Layer is the foundation of the TCP/IP model, handling the physical transmission of data over network media.</p>
+
+                <h3>Key Functions:</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Controls access to the physical network medium</li>
+                    <li>Handles frame formatting and error detection</li>
+                    <li>Manages MAC (Media Access Control) addressing</li>
+                    <li>Provides interface between network and physical layers</li>
+                </ul>
+
+                <h3>Physical Media Types:</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Medium</th>
+                            <th>Speed</th>
+                            <th>Range</th>
+                            <th>Common Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ethernet Cable</strong></td>
+                            <td>10 Mbps - 10 Gbps</td>
+                            <td>100m per segment</td>
+                            <td>Office networks, data centers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wi-Fi</strong></td>
+                            <td>54 Mbps - 9.6 Gbps</td>
+                            <td>50-100m indoor</td>
+                            <td>Home/office wireless networks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fiber Optic</strong></td>
+                            <td>100 Mbps - 100+ Gbps</td>
+                            <td>40km+ without repeaters</td>
+                            <td>Internet backbone, long distances</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <h4>MAC Address Example:</h4>
+                    <p>Every network interface has a unique 48-bit MAC address like: <strong>00:1B:44:11:3A:B7</strong></p>
+                    <p>This address is used for local network communication within the same network segment.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🌍 Practical Example: Visiting a Website</h2>
+                <p>Let's trace what happens when you visit <strong>www.example.com</strong> through all four layers:</p>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Application Layer:</strong> Your browser creates an HTTP GET request for the webpage. DNS resolves "www.example.com" to an IP address like 93.184.216.34.
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Transport Layer:</strong> TCP breaks the HTTP request into segments, adds sequence numbers and port information (usually port 80 for HTTP or 443 for HTTPS), and ensures reliable delivery.
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Internet Layer:</strong> IP adds source address (your computer) and destination address (93.184.216.34). Routers use this information to forward packets across the internet.
+                </div>
+
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Network Access Layer:</strong> Frames are created with MAC addresses for the next hop (usually your router). Data is transmitted as electrical/optical signals over your network connection.
+                </div>
+
+                <div class="highlight">
+                    <strong>Return Journey:</strong> The web server's response follows the same process in reverse, with each layer adding its own information and the receiving layers processing and removing that information.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Troubleshooting with TCP/IP Layers</h2>
+                <p>Understanding the layers helps diagnose network problems:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>Common Issues</th>
+                            <th>Diagnostic Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Application</strong></td>
+                            <td>Website won't load, email not sending</td>
+                            <td>Browser dev tools, telnet</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Transport</strong></td>
+                            <td>Connection timeouts, port blocked</td>
+                            <td>netstat, port scanners</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internet</strong></td>
+                            <td>Can't reach remote networks</td>
+                            <td>ping, traceroute, route</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Network Access</strong></td>
+                            <td>No network connectivity, cable issues</td>
+                            <td>ipconfig, arp, cable testers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📚 Key Takeaways</h2>
+                <div class="highlight">
+                    <h3>Remember the TCP/IP Model:</h3>
+                    <p><strong>Application Layer:</strong> Where users interact with network services</p>
+                    <p><strong>Transport Layer:</strong> Ensures reliable end-to-end communication</p>
+                    <p><strong>Internet Layer:</strong> Handles routing across networks</p>
+                    <p><strong>Network Access Layer:</strong> Manages physical network transmission</p>
+                </div>
+
+                <div class="protocol-box">
+                    <h4>Why TCP/IP Matters:</h4>
+                    <p>• It's the foundation of all internet communication</p>
+                    <p>• Understanding it helps troubleshoot network issues</p>
+                    <p>• Essential knowledge for IT professionals and developers</p>
+                    <p>• Enables the global connectivity we rely on daily</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>TCP/IP Model Guide • Understanding Network Communication • © 2025</p>
+        </div>
+    </div>
+</body>
+</html>
